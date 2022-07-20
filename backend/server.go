@@ -4,6 +4,7 @@ import (
 	"backend/controllers"
 	"backend/database"
 	"fmt"
+	"net/http"
 
 	"github.com/joho/godotenv"
 	"github.com/labstack/echo/v4"
@@ -19,8 +20,14 @@ func main() {
 	e := echo.New()
 	database.Connect()
 
+	// e.Use(middleware.CORSWithConfig(middleware.CORSConfig{
+	// 	AllowOrigins: []string{"http://localhost:3000"},
+	// }))
+
 	e.Use(middleware.CORSWithConfig(middleware.CORSConfig{
-		AllowOrigins: []string{"http://localhost:3000"},
+		AllowOrigins: []string{"https://namelessshop.azurewebsites.net", "http://localhost:3000", "http://localhost:1323"},
+		AllowHeaders: []string{echo.HeaderOrigin, echo.HeaderContentType, echo.HeaderAccept, echo.HeaderAuthorization},
+		AllowMethods: []string{http.MethodGet, http.MethodPost, http.MethodPut, http.MethodDelete},
 	}))
 
 	e.GET("/users", controllers.GetUsers)
