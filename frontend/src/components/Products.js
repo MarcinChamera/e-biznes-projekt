@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useState } from "react";
 import { Card, CardContent, Typography, Container, Grid, CardMedia, Button, Alert, Snackbar } from "@mui/material";
 import { ProductsContext } from "../context/ProductsContext";
 import { ShoppingCartContext } from "../context/ShoppingCartContext";

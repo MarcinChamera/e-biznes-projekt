@@ -13,16 +13,16 @@
     "@testing-library/react": "^13.0.0",
     "@testing-library/user-event": "^13.2.1",
     "axios": "^0.27.2",
+    "cypress": "^9.6.1",
     "Math": "^0.0.1-security",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
     "react-hook-form": "^7.33.1",
     "react-router-dom": "^6.3.0",
     "react-scripts": "^5.0.1",
-    "react-social-login-buttons": "^3.6.0",
+    "react-social-icons": "^5.14.0",
     "uselocalstorage-react-hook": "^1.0.5",
-    "web-vitals": "^2.1.0",
-    "cypress": "^9.6.1"
+    "web-vitals": "^2.1.0"
   },
   "scripts": {
     "start": "react-scripts start",
