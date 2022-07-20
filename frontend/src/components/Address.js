@@ -22,7 +22,7 @@ const Address = () => {
     function saveDetailsAndPay(data) {
         const amount = JSON.stringify(amountToPay);
 
-        var cartId = 0;
+        let cartId = 0;
 
         axios.post("/shopping-carts").then((res) => {
             for (let shoppingCartProductId in sessionStorage) {

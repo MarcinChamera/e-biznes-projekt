@@ -25,7 +25,7 @@ describe('Products', function () {
         sessionStorage.setItem("token", "randomTokenValue");
         cy.reload();
         cy.get('.logoutLink').should("have.text", "Logout");
-        cy.get('.emailLoggedIn').contains(new RegExp("Konto:")).contains(new RegExp("serwis:")).should('be.visible');
+        cy.get('.emailLoggedIn').contains(/Konto:/).contains(/serwis:/).should('be.visible');
     })
 
     it('login is not visible - logged in', () => {
@@ -37,7 +37,7 @@ describe('Products', function () {
     it('account email and oauth service are visible - logged in', () => {
         sessionStorage.setItem("token", "randomTokenValue");
         cy.reload();
-        cy.get('.emailLoggedIn').contains(new RegExp("Konto:")).contains(new RegExp("serwis:")).should('be.visible');
+        cy.get('.emailLoggedIn').contains(/Konto:/).contains(/serwis:/).should('be.visible');
     })
 
     it('shopping cart icon navigates to shopping-cart url', () => {

@@ -14,7 +14,7 @@ describe('Products & Categories', function () {
     })
 
     it('"wszystkie" category shouldn\'t have its description visible', () => {
-        cy.get('.categoryDescription').should("not.have.text", new RegExp("."));
+        cy.get('.categoryDescription').should("not.have.text", /./);
     })
 
     // it('"telefony" category should have its description visible', () => {
