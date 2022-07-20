@@ -1,7 +1,7 @@
 import axios from "axios";
 
 // const baseURL = "http://localhost:1323";
-const baseURL = "https://namelessshop-service.azurewebsites.net";
+const baseURL = "https://namelessshop-server.azurewebsites.net";
 
 export default axios.create({
     baseURL: baseURL,
