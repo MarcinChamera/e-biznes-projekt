@@ -9,6 +9,6 @@ export default axios.create({
         // 'Access-Control-Allow-Origin': baseURL,
         'Access-Control-Allow-Origin': baseURL + ":1323",
         "Content-Type": "application/json",
-        'Access-Control-Allow-Methods': "GET,PUT,POST,DELETE,PATCH,OPTIONS",
+        // 'Access-Control-Allow-Methods': "GET,PUT,POST,DELETE,PATCH,OPTIONS",
       }
 })
