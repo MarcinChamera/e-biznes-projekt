@@ -19,7 +19,7 @@ import (
 )
 
 var googleConfig = &oauth2.Config{
-	RedirectURL:  "http://localhost:1323/google/callback",
+	RedirectURL:  "https://namelessshop-server.azurewebsites.net:1323/google/callback",
 	ClientID:     os.Getenv("GOOGLE_CLIENT_ID"),
 	ClientSecret: os.Getenv("GOOGLE_CLIENT_SECRET"),
 	Scopes: []string{
@@ -30,7 +30,7 @@ var googleConfig = &oauth2.Config{
 }
 
 var githubConfig = &oauth2.Config{
-	RedirectURL:  "http://localhost:1323/github/callback",
+	RedirectURL:  "https://namelessshop-server.azurewebsites.net:1323/github/callback",
 	ClientID:     os.Getenv("GITHUB_CLIENT_ID"),
 	ClientSecret: os.Getenv("GITHUB_CLIENT_SECRET"),
 	Scopes: []string{
@@ -41,7 +41,7 @@ var githubConfig = &oauth2.Config{
 }
 
 var facebookConfig = &oauth2.Config{
-	RedirectURL:  "http://localhost:1323/facebook/callback",
+	RedirectURL:  "https://namelessshop-server.azurewebsites.net:1323/facebook/callback",
 	ClientID:     os.Getenv("FACEBOOK_CLIENT_ID"),
 	ClientSecret: os.Getenv("FACEBOOK_CLIENT_SECRET"),
 	Scopes: []string{
@@ -96,7 +96,7 @@ func GoogleCallback(c echo.Context) error {
 	newToken := helpers.GenerateNewToken(40)
 	userId := strconv.Itoa(int(userFromGet.ID))
 
-	c.Redirect(http.StatusFound, "http://localhost:3000/login/auth/google/success/"+newToken+"&"+user.Email+"&"+userId)
+	c.Redirect(http.StatusFound, "https://namelessshop.azurewebsites.net/login/auth/google/success/"+newToken+"&"+user.Email+"&"+userId)
 
 	return c.JSON(http.StatusOK, echo.Map{
 		"token": newToken,
@@ -158,7 +158,7 @@ func GithubCallback(c echo.Context) error {
 
 	newToken := helpers.GenerateNewToken(40)
 
-	c.Redirect(http.StatusFound, "http://localhost:3000/login/auth/github/success/"+newToken+"&"+user.Email+"&"+strconv.Itoa(int(userFromGet.ID)))
+	c.Redirect(http.StatusFound, "https://namelessshop.azurewebsites.net/login/auth/github/success/"+newToken+"&"+user.Email+"&"+strconv.Itoa(int(userFromGet.ID)))
 
 	return c.JSON(http.StatusOK, echo.Map{
 		"token": newToken,
@@ -219,7 +219,7 @@ func FacebookCallback(c echo.Context) error {
 
 	newToken := helpers.GenerateNewToken(40)
 
-	c.Redirect(http.StatusFound, "http://localhost:3000/login/auth/facebook/success/"+newToken+"&"+user.Email)
+	c.Redirect(http.StatusFound, "https://namelessshop.azurewebsites.net/login/auth/facebook/success/"+newToken+"&"+user.Email)
 
 	return c.JSON(http.StatusOK, echo.Map{
 		"token": newToken,
