@@ -4,11 +4,13 @@ WORKDIR /app
 
 ENV PATH /app/node_modules/.bin:$PATH
 
-COPY package*.json ./
+COPY package.json /app
+# COPY package*.json ./
 
 RUN npm install
 
-COPY . ./
+# COPY . ./
+COPY . /app
 
 EXPOSE 3000
 
