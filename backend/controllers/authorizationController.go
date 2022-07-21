@@ -19,7 +19,7 @@ import (
 )
 
 var googleConfig = &oauth2.Config{
-	RedirectURL:  "https://namelessshop-server.azurewebsites.net:1323/google/callback",
+	RedirectURL:  "https://namelessshop-server.azurewebsites.net/google/callback",
 	ClientID:     os.Getenv("GOOGLE_CLIENT_ID"),
 	ClientSecret: os.Getenv("GOOGLE_CLIENT_SECRET"),
 	Scopes: []string{
@@ -30,7 +30,7 @@ var googleConfig = &oauth2.Config{
 }
 
 var githubConfig = &oauth2.Config{
-	RedirectURL:  "https://namelessshop-server.azurewebsites.net:1323/github/callback",
+	RedirectURL:  "https://namelessshop-server.azurewebsites.net/github/callback",
 	ClientID:     os.Getenv("GITHUB_CLIENT_ID"),
 	ClientSecret: os.Getenv("GITHUB_CLIENT_SECRET"),
 	Scopes: []string{
@@ -41,7 +41,7 @@ var githubConfig = &oauth2.Config{
 }
 
 var facebookConfig = &oauth2.Config{
-	RedirectURL:  "https://namelessshop-server.azurewebsites.net:1323/facebook/callback",
+	RedirectURL:  "https://namelessshop-server.azurewebsites.net/facebook/callback",
 	ClientID:     os.Getenv("FACEBOOK_CLIENT_ID"),
 	ClientSecret: os.Getenv("FACEBOOK_CLIENT_SECRET"),
 	Scopes: []string{
