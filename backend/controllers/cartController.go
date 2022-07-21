@@ -34,3 +34,9 @@ func AddCartProduct(c echo.Context) error {
 	database.GetDatabase().Create(&cartProduct)
 	return c.String(http.StatusCreated, strconv.Itoa(int(cartProduct.ID)))
 }
+
+func GetCarts(c echo.Context) error {
+	var carts []models.Cart
+	database.GetDatabase().Find(&carts)
+	return c.JSON(http.StatusOK, carts)
+}

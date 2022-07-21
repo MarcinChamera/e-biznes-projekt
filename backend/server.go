@@ -43,6 +43,8 @@ func main() {
 
 	e.GET("/categories/:id", controllers.GetCategory)
 
+	e.GET("/shopping-carts", controllers.GetCarts)
+
 	e.POST("/shopping-carts", controllers.AddCart)
 
 	e.POST("/shopping-carts/:id", controllers.AddCartProduct)
