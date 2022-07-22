@@ -41,19 +41,16 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: frontend
 
     steps:
     - uses: actions/checkout@v2
-      with:
-        persist-credentials: false
+#       with:
+#         persist-credentials: false
 
-    - name: Reconfigure git to use HTTP authentication
-      run: >
-        git config --global url."https://github.com/".insteadOf
-        ssh://git@github.com/
+#     - name: Reconfigure git to use HTTP authentication
+#       run: >
+#         git config --global url."https://github.com/".insteadOf
+#         ssh://git@github.com/
 
     - name: Set up Docker Buildx
       uses: docker/setup-buildx-action@v1
@@ -88,7 +85,7 @@ jobs:
       with:
         push: true
         tags: ebiznesprojekt.azurecr.io/${{ secrets.AZURECONTAINERUSERNAME }}/nameless-shop-client:${{ github.sha }}
-        file: frontend/Dockerfile
+        file: ./Dockerfile
 
   deploy:
     permissions:
