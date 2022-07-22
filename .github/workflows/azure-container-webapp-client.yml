@@ -50,10 +50,10 @@ jobs:
       with:
         persist-credentials: false
 
-#     - name: Reconfigure git to use HTTP authentication
-#       run: >
-#         git config --global url."https://github.com/".insteadOf
-#         ssh://git@github.com/
+    - name: Reconfigure git to use HTTP authentication
+      run: >
+        git config --global url."https://github.com/".insteadOf
+        ssh://git@github.com/
 
     - name: Set up Docker Buildx
       uses: docker/setup-buildx-action@v1
