@@ -28,6 +28,8 @@ name: Build and deploy a container to an Azure Web App
 
 env:
   AZURE_WEBAPP_NAME: 'namelessshop'  # set this to the name of your Azure Web App
+  BROWSERSTACK_USERNAME: "${{ secrets.BROWSERSTACK_USERNAME }}"
+  BROWSERSTACK_ACCESS_KEY: "${{ secrets.BROWSERSTACK_ACCESS_KEY }}"
 
 on:
   push:
@@ -105,3 +107,31 @@ jobs:
           app-name: 'namelessshop'
           publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
           images: 'ebiznesprojekt.azurecr.io/${{ secrets.AZURECONTAINERUSERNAME }}/nameless-shop-client:${{ github.sha }}'
+
+  test:
+    runs-on: ubuntu-latest
+    needs: deploy
+    
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: 'BrowserStack Env Setup'
+      uses: 'browserstack/github-actions/setup-env@master'
+      with:
+        username:  ${{ secrets.BROWSERSTACK_USERNAME }}
+        access-key: ${{ secrets.BROWSERSTACK_ACCESS_KEY }}
+
+    - name: 'Start BrowserStackLocal Tunnel'
+      uses: 'browserstack/github-actions/setup-local@master'
+      with:
+        local-testing: 'start'
+        local-logging-level: 'all-logs'
+        local-identifier: 'random'
+
+    - name: Run browserstack tests
+      run: browserstack-cypress run --sync -u ${{ secrets.BROWSERSTACK_USERNAME }} -k ${{ secrets.BROWSERSTACK_ACCESS_KEY }}
+      
+    - name: 'Stop BrowserStackLocal'
+      uses: 'browserstack/github-actions/setup-local@master'
+      with:
+        local-testing: 'stop'
