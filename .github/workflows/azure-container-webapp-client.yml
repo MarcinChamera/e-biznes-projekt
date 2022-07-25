@@ -114,6 +114,8 @@ jobs:
     
     steps:
     - uses: actions/checkout@v2
+  
+    - run: npm install -g browserstack-cypress-cli
 
     - name: 'BrowserStack Env Setup'
       uses: 'browserstack/github-actions/setup-env@master'
@@ -127,7 +129,7 @@ jobs:
         local-testing: 'start'
         local-logging-level: 'all-logs'
         local-identifier: 'random'
-
+        
     - name: Run browserstack tests
       run: browserstack-cypress run --sync -u ${{ secrets.BROWSERSTACK_USERNAME }} -k ${{ secrets.BROWSERSTACK_ACCESS_KEY }}
       
