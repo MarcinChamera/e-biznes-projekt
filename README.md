@@ -1,7 +1,11 @@
-# Browserstack:
+[![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=MarcinChamera_e-biznes-projekt&metric=vulnerabilities)](https://sonarcloud.io/summary/new_code?id=MarcinChamera_e-biznes-projekt)
+[![Bugs](https://sonarcloud.io/api/project_badges/measure?project=MarcinChamera_e-biznes-projekt&metric=bugs)](https://sonarcloud.io/summary/new_code?id=MarcinChamera_e-biznes-projekt)
+[![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=MarcinChamera_e-biznes-projekt&metric=code_smells)](https://sonarcloud.io/summary/new_code?id=MarcinChamera_e-biznes-projekt)
+[![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=MarcinChamera_e-biznes-projekt&metric=security_rating)](https://sonarcloud.io/summary/new_code?id=MarcinChamera_e-biznes-projekt)
+[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=MarcinChamera_e-biznes-projekt&metric=sqale_rating)](https://sonarcloud.io/summary/new_code?id=MarcinChamera_e-biznes-projekt)
+
+# Browserstack
 https://automate.browserstack.com/dashboard/v2/builds/4f20ad5b139d2fe591694a0454c8db0b3426d2c8
-
-
 
 # Getting Started with Create React App
 
