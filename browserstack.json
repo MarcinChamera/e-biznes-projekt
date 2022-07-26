@@ -13,11 +13,16 @@
         "project_name": "Cypress Ebiznes Projekt",
         "build_name": "Build no: 2",
         "exclude": [],
-        "parallels": 5
+        "parallels": 5,
+        "npm_dependencies": {},
+        "package_config_options": {},
+        "headless": true
     },
     "connection_settings": {
-        "local": true,
-        "local_identifier": "Local_Identifier"
+        "local": false,
+        "local_identifier": null,
+        "local_mode": null,
+        "local_config_file": null
     },
     "disable_usage_reporting": false
 }
