@@ -18,32 +18,32 @@ describe('Products & Categories', function () {
     })
 
     it('"wszystkie" category shouldn\'t have its description visible', () => {
-        cy.get('.categoryDescription').should("not.have.text", new RegExp("."));
+        cy.get('.categoryDescription').should("not.have.text", /./);
     })
 
-    // it('"telefony" category should have its description visible', () => {
-    //     cy.get('.categoriesCombobox').click();
-    //     cy.get('.category').then($categories => $categories[1]).click();
-    //     cy.get('.categoryDescription').should("have.text", "Telefony tylko od najlepszych producentów!");
-    // })
+    it('"telefony" category should have its description visible', () => {
+        cy.get('.categoriesCombobox').click();
+        cy.get('.category').then($categories => $categories[1]).click();
+        cy.get('.categoryDescription').should("have.text", "Telefony tylko od najlepszych producentów!");
+    })
 
-    // it('"słuchawki" category should have its description visible', () => {
-    //     cy.get('.categoriesCombobox').click();
-    //     cy.get('.category').then($categories => $categories[2]).click();
-    //     cy.get('.categoryDescription').should("have.text", "Oferujemy słuchawki nauszne jak i dokanałowe");
-    // })
+    it('"słuchawki" category should have its description visible', () => {
+        cy.get('.categoriesCombobox').click();
+        cy.get('.category').then($categories => $categories[2]).click();
+        cy.get('.categoryDescription').should("have.text", "Oferujemy słuchawki nauszne jak i dokanałowe");
+    })
 
-    // it('"konsole" category should have its description visible', () => {
-    //     cy.get('.categoriesCombobox').click();
-    //     cy.get('.category').then($categories => $categories[3]).click();
-    //     cy.get('.categoryDescription').should("have.text", "Konsole od producentów Sony (PlayStation) i Microsoft (Xbox)");
-    // })
+    it('"konsole" category should have its description visible', () => {
+        cy.get('.categoriesCombobox').click();
+        cy.get('.category').then($categories => $categories[3]).click();
+        cy.get('.categoryDescription').should("have.text", "Konsole od producentów Sony (PlayStation) i Microsoft (Xbox)");
+    })
 
-    // it('"monitory" category should have its description visible', () => {
-    //     cy.get('.categoriesCombobox').click();
-    //     cy.get('.category').then($categories => $categories[4]).click();
-    //     cy.get('.categoryDescription').should("have.text", "Szeroki wybór monitorów o różnych przekątnych, rozdzielczościach, częstotliwości odświeżania i nie tylko!");
-    // })
+    it('"monitory" category should have its description visible', () => {
+        cy.get('.categoriesCombobox').click();
+        cy.get('.category').then($categories => $categories[4]).click();
+        cy.get('.categoryDescription').should("have.text", "Szeroki wybór monitorów o różnych przekątnych, rozdzielczościach, częstotliwości odświeżania i nie tylko!");
+    })
 
     it('products from "wszystkie" category are visible', () => {
         cy.get('.product').its('length').should('be.gte', 1);

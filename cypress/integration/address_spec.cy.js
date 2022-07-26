@@ -64,7 +64,7 @@ describe('Address', function () {
         it('"Miasto" textfield is required', () => {
         cy.get('.input').then($inputs => $inputs[0]).type("Bracka");
         cy.get('.input').then($inputs => $inputs[1]).type("1");
-        cy.get('.input').then($inputs => $inputs[3]).type("Kraków");
+        cy.get('.input').then($inputs => $inputs[2]).type("11111");
         cy.get('.submitButton').click();
         cy.get('.error').should('have.length', 1);
     })

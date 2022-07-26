@@ -6,10 +6,6 @@ function Category({setCategory}) {
     const { categories } = useContext(ProductsContext);
     const [formCategory, setFormCategory] = useState(0); 
 
-    useEffect(() => {
-        setFormCategory(formCategory)
-    }, [formCategory]) 
-
     return (
         <FormControl fullWidth className="categoriesCombobox" >
             <InputLabel className="categoriesLabel">Kategorie</InputLabel>

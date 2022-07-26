@@ -24,10 +24,10 @@ yarn-error.log*
 
 .env
 local.log
-frontend/log
-frontend/npm_install_debug.log
+log
+npm_install_debug.log
 
 # generates 2 sonarcloud bugs
-frontend/results/browserstack-cypress-report.html
+results/browserstack-cypress-report.html
 
 package-lock.json

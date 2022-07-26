@@ -56,8 +56,8 @@ describe('Shopping Cart', function () {
     it('product in shopping cart has displayed the amount of money to pay', () => {
         cy.get('.addToBasketButton').eq(0).click();
         cy.get('.cartButton').click();
-        cy.get('.shoppingCartSummary').contains(new RegExp("Do zapłacenia: "));
-        cy.get('.shoppingCartSummary').contains(new RegExp("PLN"));
+        cy.get('.shoppingCartSummary').contains(/Do zapłacenia: /);
+        cy.get('.shoppingCartSummary').contains(/PLN/);
         cy.get('.shoppingCartSummary').invoke('text').then((text) => {
             expect(text.length).to.be.at.least(20)
         });
