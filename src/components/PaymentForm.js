@@ -60,13 +60,13 @@ function PaymentForm({amountToPay, paymentNumber}) {
 
     return (
         <Container className="container">
-            <Typography variant="h6" marginBottom={3}>
+            <Typography className="paymentAmountHeader" variant="h6" marginBottom={3}>
                 Do zapłaty: {amountToPay} PLN
             </Typography>
             <form onSubmit={handleSubmitForm}>
                 <CardElement />
                 <Box mt={5}>
-                    <Button variant="contained" type="submit">
+                    <Button className="submitPaymentButton" variant="contained" type="submit">
                         Zapłać
                     </Button>
                 </Box>

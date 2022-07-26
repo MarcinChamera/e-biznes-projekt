@@ -52,21 +52,21 @@ const Address = () => {
 
     return (
         <Container className="container">
-            <Typography variant="h4" align="center">Dostawa pod adres:</Typography>
+            <Typography className="addressPageHeader" variant="h4" align="center">Dostawa pod adres:</Typography>
             <form onSubmit={handleSubmit(data => {
                 saveDetailsAndPay(data);
             })}>
                 <Stack spacing={2} alignItems="center" marginTop={5}>
-                    <label>Ulica:</label>
+                    <label className="streetLabel">Ulica:</label>
                     <TextField className='input' {...register('street', { required: "Wymagane" })} />
                     <Error errors={errors.street} />
-                    <label>Numer domu:</label>
+                    <label className='houseNumberLabel'>Numer domu:</label>
                     <TextField className='input' type="number" {...register('houseNumber', { required: "Wymagane" })} />
                     <Error errors={errors.houseNumber} />
-                    <label>Kod pocztowy:</label>
+                    <label className="postalCodeLabel">Kod pocztowy:</label>
                     <TextField className='input' type="number" {...register('postalCode', { required: "Wymagane" })} />
                     <Error errors={errors.postalCode} />
-                    <label>Miasto:</label>
+                    <label className="cityLabel">Miasto:</label>
                     <TextField className='input' {...register('city', { required: "Wymagane" })} />
                     <Error errors={errors.city} />
                     <Button

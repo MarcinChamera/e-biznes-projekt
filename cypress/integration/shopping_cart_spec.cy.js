@@ -1,6 +1,6 @@
-describe('Products & Categories', function () {
+describe('Shopping Cart', function () {
     beforeEach(() => {
-        cy.visit('http://localhost:3000/');
+        cy.visit('https://namelessshop.azurewebsites.net');
         sessionStorage.clear();
         cy.reload();
     })
@@ -56,8 +56,8 @@ describe('Products & Categories', function () {
     it('product in shopping cart has displayed the amount of money to pay', () => {
         cy.get('.addToBasketButton').eq(0).click();
         cy.get('.cartButton').click();
-        cy.get('.shoppingCartSummary').contains(/Do zapłacenia: /);
-        cy.get('.shoppingCartSummary').contains(/PLN/);
+        cy.get('.shoppingCartSummary').contains(new RegExp("Do zapłacenia: "));
+        cy.get('.shoppingCartSummary').contains(new RegExp("PLN"));
         cy.get('.shoppingCartSummary').invoke('text').then((text) => {
             expect(text.length).to.be.at.least(20)
         });
@@ -76,6 +76,33 @@ describe('Products & Categories', function () {
         cy.get('.shoppingCartProductPrice').then(($productPrice) => {
             cy.get('.shoppingCartSummary').should('have.text', 'Do zapłacenia: ' + $productPrice.text());
         })
+    })
+
+    it('Quantity textfield can take integer only', () => {
+        cy.get('.addToBasketButton').eq(0).click();
+        cy.get('.cartButton').click();
+        cy.get('.shoppingCartProductQuantity > div > input').type("a");
+        cy.get('.shoppingCartProductQuantity > div > input').should('exist').invoke('attr', 'value').should('eq', '1');
+    })
+
+    it('Go to delivery button works', () => {
+        cy.get('.addToBasketButton').eq(0).click();
+        cy.get('.cartButton').click();
+        cy.get('.goToDeliveryButton').click();
+        cy.url().should('eq', 'https://namelessshop.azurewebsites.net/address');
+    })
+
+    it('Remove product from shopping cart button remove the product', () => {
+        cy.get('.addToBasketButton').eq(0).click();
+        cy.get('.cartButton').click();
+        cy.get('.removeFromCartButton').click();
+        cy.get('.emptyShoppingCart').should('have.text', 'Koszyk jest pusty');
+    })
+
+    it('product in shopping cart has visible image alt text', () => {
+        cy.get('.addToBasketButton').eq(0).click();
+        cy.get('.cartButton').click();
+        cy.get('.shoppingCartProductImage > img').invoke('attr', 'alt').should('not.be.empty');
     })
 
     // it('quantity change is reflected in total amount to pay', () => {

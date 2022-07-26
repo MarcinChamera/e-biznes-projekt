@@ -29,7 +29,7 @@ const Login = () => {
         <Container className="container">
             <Grid container alignItems="center" justify="center" direction="column" spacing={1}>
                 <Grid item sm={4}>
-                    <Typography variant="h4">
+                    <Typography className="loginHeaderInfo" variant="h4">
                         Wybierz w jaki sposób chcesz się zalogować
                     </Typography>
                 </Grid>

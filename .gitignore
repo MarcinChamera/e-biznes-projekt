@@ -29,3 +29,5 @@ frontend/npm_install_debug.log
 
 # generates 2 sonarcloud bugs
 frontend/results/browserstack-cypress-report.html
+
+package-lock.json

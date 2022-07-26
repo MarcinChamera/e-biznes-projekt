@@ -11,7 +11,7 @@
     "run_settings": {
         "cypress_config_file": "cypress.json",
         "project_name": "Cypress Ebiznes Projekt",
-        "build_name": "Build no: 1",
+        "build_name": "Build no: 2",
         "exclude": [],
         "parallels": 5
     },

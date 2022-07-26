@@ -1,7 +1,11 @@
 describe('Products & Categories', function () {
     beforeEach(() => {
-        cy.visit('http://localhost:3000/')
+        cy.visit('https://namelessshop.azurewebsites.net')
     });
+
+    it('"Kategorie" label is visible', () => {
+        cy.get('.categoriesCombobox > label').should('have.text', "Kategorie");
+    })
 
     it('all categories are visible', () => {
         cy.get('.categoriesCombobox').click();
@@ -14,7 +18,7 @@ describe('Products & Categories', function () {
     })
 
     it('"wszystkie" category shouldn\'t have its description visible', () => {
-        cy.get('.categoryDescription').should("not.have.text", /./);
+        cy.get('.categoryDescription').should("not.have.text", new RegExp("."));
     })
 
     // it('"telefony" category should have its description visible', () => {
@@ -210,5 +214,41 @@ describe('Products & Categories', function () {
     it('"Do koszyka" button triggers "Dodano do koszyka" alert', () => {
         cy.get('.addToBasketButton').eq(0).click();
         cy.get(".MuiAlert-message").should("have.text", "Dodano produkt do koszyka!");
+    })
+
+    it('product image from "wszystkie" category should have alt text', () => {
+        cy.get('.categoriesCombobox').click();
+        cy.get('.category').then($categories => $categories[0]).click();
+        cy.get('.productImage > img').eq(0).invoke('attr', 'alt').should('not.be.empty');
+    })
+
+    it('product image from "telefony" category should have alt text', () => {
+        cy.get('.categoriesCombobox').click();
+        cy.get('.category').then($categories => $categories[1]).click();
+        cy.get('.productImage > img').eq(0).invoke('attr', 'alt').should('not.be.empty');
+    })
+
+    it('product image from "słuchawki" category should have alt text', () => {
+        cy.get('.categoriesCombobox').click();
+        cy.get('.category').then($categories => $categories[2]).click();
+        cy.get('.productImage > img').eq(0).invoke('attr', 'alt').should('not.be.empty');
+    })
+
+    it('product image from "konsole" category should have alt text', () => {
+        cy.get('.categoriesCombobox').click();
+        cy.get('.category').then($categories => $categories[3]).click();
+        cy.get('.productImage > img').eq(0).invoke('attr', 'alt').should('not.be.empty');
+    })
+    
+    it('product image from "monitory" category should have alt text', () => {
+        cy.get('.categoriesCombobox').click();
+        cy.get('.category').then($categories => $categories[4]).click();
+        cy.get('.productImage > img').eq(0).invoke('attr', 'alt').should('not.be.empty');
+    })
+
+    it('categories combobox can be closed', () => {
+        cy.get('.categoriesCombobox').click();
+        cy.get('.category').then($categories => $categories[0]).click();
+        cy.get('.category').should('have.length', 0);
     })
 })
