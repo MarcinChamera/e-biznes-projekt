@@ -36,9 +36,4 @@ describe('Login', function () {
             expect($img[0].naturalWidth).to.be.greaterThan(0);
         });
     })
-
-    // it('Google OAuth provider page is opened', () => {
-    //     cy.get('.googleLogin').click();
-    //     cy.get('span').contains('Przejdź do aplikacji').get('button').should('have.text', 'Nameless shop');
-    // })
 })

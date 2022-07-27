@@ -82,17 +82,4 @@ describe('Stripe Payment', function () {
         cy.wait(3000);
         cy.url().should('eq', 'https://namelessshop.azurewebsites.net/payment/stripe')
     })
-
-    // it('Payment didn\'t succeed - no card expiry entered', () => {
-    //     cy.get('.goToDeliveryButton').click();
-    //     cy.get('.input').then($inputs => $inputs[0]).type("Bracka");
-    //     cy.get('.input').then($inputs => $inputs[1]).type("1");
-    //     cy.get('.input').then($inputs => $inputs[2]).type("11111");
-    //     cy.get('.input').then($inputs => $inputs[3]).type("Kraków");
-    //     cy.get('.submitButton').click();
-
-    //     cy.get('.submitPaymentButton').click().catch((err) => {
-    //         assert(err !== null);
-    //     });  
-    // })
 })

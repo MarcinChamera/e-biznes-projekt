@@ -24,28 +24,24 @@ describe('Products & Categories', function () {
     it('"telefony" category should have its description visible', () => {
         cy.get('.categoriesCombobox').click();
         cy.get('.category').then($categories => $categories[1]).click();
-        cy.wait(1000);
         cy.get('.categoryDescription').should("have.text", "Telefony tylko od najlepszych producentów!");
     })
 
     it('"słuchawki" category should have its description visible', () => {
         cy.get('.categoriesCombobox').click();
         cy.get('.category').then($categories => $categories[2]).click();
-        cy.wait(1000);
         cy.get('.categoryDescription').should("have.text", "Oferujemy słuchawki nauszne jak i dokanałowe");
     })
 
     it('"konsole" category should have its description visible', () => {
         cy.get('.categoriesCombobox').click();
         cy.get('.category').then($categories => $categories[3]).click();
-        cy.wait(1000);
         cy.get('.categoryDescription').should("have.text", "Konsole od producentów Sony (PlayStation) i Microsoft (Xbox)");
     })
 
     it('"monitory" category should have its description visible', () => {
         cy.get('.categoriesCombobox').click();
         cy.get('.category').then($categories => $categories[4]).click();
-        cy.wait(1000);
         cy.get('.categoryDescription').should("have.text", "Szeroki wybór monitorów o różnych przekątnych, rozdzielczościach, częstotliwości odświeżania i nie tylko!");
     })
 

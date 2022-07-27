@@ -104,17 +104,4 @@ describe('Shopping Cart', function () {
         cy.get('.cartButton').click();
         cy.get('.shoppingCartProductImage > img').invoke('attr', 'alt').should('not.be.empty');
     })
-
-    // it('quantity change is reflected in total amount to pay', () => {
-    //     cy.get('.addToBasketButton').eq(0).click();
-    //     cy.get('.cartButton').click();
-    //     cy.get('.shoppingCartProductQuantity > div > input').focus().clear();
-    //     const quantity = 2;
-    //     cy.get('.shoppingCartProductQuantity > div > input').type(quantity.toString());
-    //     cy.get('.shoppingCartProductPrice').then(($productPrice) => {
-    //         const productPriceInt = parseInt($productPrice.text().split(' ')[0]);
-    //         const desiredTotalPrice = (quantity * productPriceInt).toString();
-    //         cy.get('.shoppingCartSummary').should('have.text', 'Do zapłacenia: ' + desiredTotalPrice + ' PLN');
-    //     })
-    // })
 })

@@ -47,7 +47,6 @@ const Login = () => {
                 </Grid>
                 <Grid item sm={4} marginTop={2}>
                     <Button className="facebookLogin" variant="outlined" onClick={redirectFacebook} sx={{ maxWidth: 'md' }}>
-                    {/* <Button className="facebookLogin" variant="outlined" onClick={() => alert("Jeszcze niedostępne")} sx={{ maxWidth: 'md' }}> */}
                         <img src={facebookIcon} alt="facebook icon" style={{ width: "30px", marginRight: 10}}/>
                         Zaloguj przez Facebook
                     </Button>
