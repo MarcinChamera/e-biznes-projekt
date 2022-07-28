@@ -1,7 +1,7 @@
 describe('Products & Categories', function () {
     beforeEach(() => {
         cy.visit('https://namelessshop.azurewebsites.net')
-    });
+    }); 
 
     it('Products url should redirect to the same page as the default one', () => {
         cy.visit('https://namelessshop.azurewebsites.net/products');
