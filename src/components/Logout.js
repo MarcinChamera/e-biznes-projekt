@@ -16,7 +16,7 @@ const Logout = () => {
 
     return (
         <Container className="container" >
-            <Typography variant="h4">
+            <Typography variant="h4" className="logoutText">
                 Pomyślnie wylogowano. Następuje przekierowanie...
                 {
                     setTimeout(() => {

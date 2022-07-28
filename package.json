@@ -15,6 +15,7 @@
     "axios": "^0.27.2",
     "cypress": "^9.6.1",
     "cypress-plugin-stripe-elements": "^1.0.2",
+    "cypress-wait-until": "^1.7.2",
     "Math": "^0.0.1-security",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",

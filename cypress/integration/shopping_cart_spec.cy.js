@@ -5,10 +5,14 @@ describe('Shopping Cart', function () {
         cy.reload();
     })
 
-    it('initially, shopping cart is empty', () => {
+    it('"Koszyk jest pusty" text is displayed when shopping cart is empty', () => {
         cy.get('.cartButton').click();
         cy.get('.shoppingCartHeader').should('have.text', "W koszyku:");
         cy.get('.emptyShoppingCart').should('have.text', 'Koszyk jest pusty');
+    })
+
+    it('Products are not visible when shopping cart is empty', () => {
+        cy.get('.cartButton').click();
         cy.get('.shoppingCartProduct').should('not.exist');
     })
 
@@ -76,6 +80,13 @@ describe('Shopping Cart', function () {
         cy.get('.shoppingCartProductPrice').then(($productPrice) => {
             cy.get('.shoppingCartSummary').should('have.text', 'Do zapłacenia: ' + $productPrice.text());
         })
+    })
+
+    it('Double click on product\'s add to basket button adds two products', () => {
+        cy.get('.addToBasketButton').eq(0).click();
+        cy.get('.addToBasketButton').eq(0).click();
+        cy.get('.cartButton').click();
+        cy.get('.shoppingCartProductQuantity > div > input').should('exist').invoke('attr', 'value').should('eq', '2');
     })
 
     it('Quantity textfield can take integer only', () => {

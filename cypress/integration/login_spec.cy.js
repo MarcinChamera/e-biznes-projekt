@@ -36,4 +36,14 @@ describe('Login', function () {
             expect($img[0].naturalWidth).to.be.greaterThan(0);
         });
     })
+
+    it('"Zaloguj przez Facebook" redirects to Facebook authorization page', () => {
+        cy.get('.facebookLogin').click();
+        cy.url().should('contain', 'https://www.facebook.com/v3.2/dialog/oauth?client_id');
+    })
+
+    it('"Zaloguj przez GitHub" redirects to Facebook authorization page', () => {
+        cy.get('.githubLogin').click();
+        cy.url().should('contain', 'https://github.com/login?client_id');
+    })
 })

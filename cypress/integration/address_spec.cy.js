@@ -28,6 +28,10 @@ describe('Address', function () {
         cy.get('.cityLabel').should('have.text', "Miasto:");
     })
 
+    it('Page should contain 4 inputs', () => {
+        cy.get('.input').should('have.length', 4);
+    })
+
     it('Address page "Przejdź do płatności" button is visible', () => {
         cy.get('.submitButton').should('have.text', "Przejdź do płatności");
     })
@@ -86,5 +90,9 @@ describe('Address', function () {
     it('"Kod pocztowy" can take integer only', () => {
         cy.get('.input').then($inputs => $inputs[2]).type("a");
         cy.get('input').then($inputs => $inputs[2]).invoke('val').should('be.empty')
+    })
+
+    it('Page contains 2 text inputs', () => {
+        cy.get('input[type="text"]').should('have.length', 2);
     })
 })        
