@@ -10,11 +10,15 @@
     ],
     "run_settings": {
         "cypress_config_file": "cypress.json",
+        "cypress_version": "9",
         "project_name": "Cypress Ebiznes Projekt",
         "build_name": "Build no: 2",
         "exclude": [],
         "parallels": 5,
-        "npm_dependencies": {},
+        "npm_dependencies": {
+            "cypress-plugin-stripe-elements": "^1.0.2",
+            "cypress-wait-until": "^1.7.2"
+          },
         "package_config_options": {},
         "headless": true
     },
