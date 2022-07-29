@@ -7,6 +7,9 @@
 # Browserstack
 https://automate.browserstack.com/dashboard/v2/builds/4f20ad5b139d2fe591694a0454c8db0b3426d2c8
 
+# Cypress all tests run
+![Cypress run all tests result screenshot (91/100 passed)](cypress_results.png "Cypress results image")
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
