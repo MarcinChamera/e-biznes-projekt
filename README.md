@@ -8,7 +8,7 @@
 https://namelessshop.azurewebsites.net/
 
 # Browserstack
-https://automate.browserstack.com/dashboard/v2/builds/4f20ad5b139d2fe591694a0454c8db0b3426d2c8
+https://automate.browserstack.com/dashboard/v2/public-build/VkdjeEtsVmp6bGlVMExIT1U0NytyVWMzTGFlUHJnWHVSVnhxTUdHcTRyMm5YNGJ0QTB1eTJ3bXNUMjVCUTBlcG9MNC9iQ2JhNkVyeWhpeXlreCt1MVE9PS0tSkNndlVJR3ZnYzJHYlhXbHlRZlJBUT09--bbb0ed58c3a26024c75eb38b30a3978ea389ed52
 
 # Cypress all tests run
 ![Cypress run all tests result screenshot (95/100 passed)](cypress_results.png "Cypress results image")
