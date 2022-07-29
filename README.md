@@ -4,11 +4,14 @@
 [![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=MarcinChamera_e-biznes-projekt&metric=security_rating)](https://sonarcloud.io/summary/new_code?id=MarcinChamera_e-biznes-projekt)
 [![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=MarcinChamera_e-biznes-projekt&metric=sqale_rating)](https://sonarcloud.io/summary/new_code?id=MarcinChamera_e-biznes-projekt)
 
+# Website link
+https://namelessshop.azurewebsites.net/
+
 # Browserstack
 https://automate.browserstack.com/dashboard/v2/builds/4f20ad5b139d2fe591694a0454c8db0b3426d2c8
 
 # Cypress all tests run
-![Cypress run all tests result screenshot (91/100 passed)](cypress_results.png "Cypress results image")
+![Cypress run all tests result screenshot (95/100 passed)](cypress_results.png "Cypress results image")
 
 # Getting Started with Create React App
 
